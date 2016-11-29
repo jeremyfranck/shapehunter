@@ -17,26 +17,16 @@ var pacMan =
 	
 var shapes = [rightTriangle, pacMan];
 			
-	
 //global variables
 var state = 'draw';
 var score = 0;
 var same;
 var diff;
-var currentLevel = 1;
+var currentLevel = 0;
 var maxLevel = 0;
+var minScore = 50;
 
-
-//Shape and Drawing Frames
-
-var drawingLayer = project.activeLayer
-
-var drawingFrame = new Path.Rectangle({
-    point: [0, 200],
-    size: [320, 260],
-    //strokeColor: 'black'
-});
-
+var drawingLayer = new Layer();
 
 var shapeLayer = new Layer();
 
@@ -44,65 +34,45 @@ drawingLayer.activate();
 
 
 
-var shapeFrame = new Path.Rectangle({
-    point: [0, 0],
-    size: [320, 200],
-    //strokeColor: 'black',
-	//fillColor: new Color(0.85, 0.85, 0.85, 0.95),
-});
 
-shapeLayer.addChild(shapeFrame);
-
-
-
-// ----- Draw level --------
 
 
 	
-//Shape
-
-var shape = new Path(shapes[currentLevel].shape); //load the shape that corresponds with the level
-shape.strokeColor = 'black';
-//shape.scale(1.5);
-
-shape.bounds.center = shapeFrame.bounds.center;
-
-
-//add shape to shape layer
-shapeLayer.addChild(shape);
-
-
-//Comparison shape
-var shapeCompare = shape.clone();
-shapeCompare.bounds.center = drawingFrame.bounds.center;
-
-
-
-//Shape for the acceptable area
-
-var tolerance = new CompoundPath(shapes[currentLevel].tolerance);
-tolerance.fillColor = 'black';
-tolerance.fillColor.alpha = 0.1 ;
-tolerance.bounds.center = shapeCompare.bounds.center;
-//tolerance.scale(1.5);
-
-var xOffset = shapes[currentLevel].xOffset;
-
-tolerance.position.x = tolerance.position.x + xOffset;
-
-var yOffset = shapes[currentLevel].yOffset;
-
-tolerance.position.y = tolerance.position.y + yOffset;
-
-
-
-//group and hide comparison shapes
-var compareGroup = new Group(tolerance, shapeCompare)
-compareGroup.visible = false;
-		
-		
 	
-	
+	//Shape
+	var shape = new Path(shapes[currentLevel].shape); //load the shape that corresponds with the level
+	shape.strokeColor = 'black';
+	//shape.scale(1.5);
+
+	shape.bounds.center = new Point(165,105);
+
+	//add shape to shape layer
+	shapeLayer.addChild(shape);
+
+	//Comparison shape
+	var shapeCompare = shape.clone();
+	shapeCompare.bounds.center = new Point(165,335);
+
+	//Shape for the acceptable area
+
+	var tolerance = new CompoundPath(shapes[currentLevel].tolerance);
+	tolerance.fillColor = 'black';
+	tolerance.fillColor.alpha = 0.1 ;
+	tolerance.bounds.center = shapeCompare.bounds.center;
+	//tolerance.scale(1.5);
+
+	var xOffset = shapes[currentLevel].xOffset;
+
+	tolerance.position.x = tolerance.position.x + xOffset;
+
+	var yOffset = shapes[currentLevel].yOffset;
+
+	tolerance.position.y = tolerance.position.y + yOffset;
+
+	//group and hide comparison shapes
+	var compareGroup = new Group(tolerance, shapeCompare)
+	compareGroup.visible = false;
+
 	
 //Crosshairs
 
@@ -178,7 +148,7 @@ function onMouseUp(event) {
 		//hide comparison shapes
 		compareGroup.visible = false;
 		//close the done screen
-		doneScreenLayer.visible = (false);
+		doneScreenLayer.visible = false;
 		
 		different.remove();
 		same.remove();
@@ -324,7 +294,7 @@ function compare () {
 	var sameArea = same.area;
 	var totalArea = path.area;
 	var rawScore = (sameArea / totalArea) * 100;
-	score = Math.abs(Math.floor(rawScore)) + '%';
-	scoreText.content = score;
+	score = Math.abs(Math.floor(rawScore));
+	scoreText.content = score + '%';
 	
 }
