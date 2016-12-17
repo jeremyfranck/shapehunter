@@ -9,38 +9,61 @@ var rightTriangle =
 	};
 
 var pacMan = 
-{		
-	shape:"m 411.01983,181.47684 a 53.523166,53.52317 0 0 0 -37.875,15.75468 l 37.3125,37.3125 -37.7875,37.7875 a 53.523166,53.52317 0 0 0 38.35,16.19062 53.523166,53.52317 0 0 0 53.52343,-53.52343 53.523166,53.52317 0 0 0 -53.52343,-53.52187 z",
-	tolerance: "m 432.2453,186.45845 a 58.383163,58.383163 0 0 0 -45.22656,21.52344 l 36.725,36.91718 -36.675,36.86719 a 58.383163,58.383163 0 0 0 45.17656,21.45937 58.383163,58.383163 0 0 0 58.38281,-58.38437 58.383163,58.383163 0 0 0 -58.38281,-58.38281 z m -0.55,9.13437 a 49.248382,49.248382 0 0 1 49.24843,49.24844 49.248382,49.248382 0 0 1 -49.24843,49.24844 49.248382,49.248382 0 0 1 -31.92969,-11.76875 l 37.84375,-38.04375 -37.21562,-37.40938 a 49.248382,49.248382 0 0 1 31.30156,-11.275 z",
-	xOffset: -1,
-	yOffset: -0, };
-	
-var shapes = [rightTriangle, pacMan];
+	{		
+		shape:"m 411.01983,181.47684 a 53.523166,53.52317 0 0 0 -37.875,15.75468 l 37.3125,37.3125 -37.7875,37.7875 a 53.523166,53.52317 0 0 0 38.35,16.19062 53.523166,53.52317 0 0 0 53.52343,-53.52343 53.523166,53.52317 0 0 0 -53.52343,-53.52187 z",
+		tolerance: "m 432.2453,186.45845 a 58.383163,58.383163 0 0 0 -45.22656,21.52344 l 36.725,36.91718 -36.675,36.86719 a 58.383163,58.383163 0 0 0 45.17656,21.45937 58.383163,58.383163 0 0 0 58.38281,-58.38437 58.383163,58.383163 0 0 0 -58.38281,-58.38281 z m -0.55,9.13437 a 49.248382,49.248382 0 0 1 49.24843,49.24844 49.248382,49.248382 0 0 1 -49.24843,49.24844 49.248382,49.248382 0 0 1 -31.92969,-11.76875 l 37.84375,-38.04375 -37.21562,-37.40938 a 49.248382,49.248382 0 0 1 31.30156,-11.275 z",
+		xOffset: -1,
+		yOffset: -0, 
+	};
+
+
+var	pacMan2 = {
+	shape:"m 519.3125,55.09375 c -12.0577,-0.01248 -20.82031,3.269531 -20.82031,3.269531 a 3.6803681,3.6803681 0 0 0 -1.76758,5.46875 c 3.65985,5.545222 4.45684,10.390395 3.84766,14.910157 -0.60919,4.519761 -2.77078,8.780278 -5.52149,12.466796 -5.50142,7.373036 -13.04687,12.080076 -13.04687,12.080076 a 3.6803681,3.6803681 0 0 0 3.44531,6.48828 c 0,0 14.1449,-6.354 26.06445,-9.25976 5.95978,-1.452882 11.48944,-1.607229 13.01367,-0.957033 0.76212,0.325098 0.6043,0.08686 0.67383,0.810543 0.0695,0.72369 -0.26975,2.75385 -1.88867,5.82422 -3.87287,7.3451 -4.71148,13.31829 -2.02344,17.75781 2.68804,4.43953 7.80471,5.73946 12.64258,5.91602 4.83787,0.17656 9.93597,-0.75253 14.25977,-2.04883 2.16189,-0.64815 4.119,-1.39011 5.77734,-2.19726 1.65834,-0.80716 2.99488,-1.47993 4.22656,-3.01953 0.53363,-0.66703 2.89091,-2.87846 5.35547,-5.67383 2.46456,-2.79538 5.18836,-6.40115 6.9668,-10.88281 C 574.07446,97.083545 572.9875,84.676958 559.9082,71.597656 546.72481,58.414269 531.3702,55.106229 519.3125,55.09375 Z m -0.11523,7.226562 c 10.4995,-0.01248 23.9011,2.875721 35.50585,14.480469 11.70884,11.708834 11.61282,19.878053 8.97266,26.531249 -1.32008,3.3266 -3.4923,6.28935 -5.64453,8.73047 -2.15223,2.44112 -4.1326,4.13157 -5.58203,5.94336 0.24016,-0.3002 -0.51469,0.42251 -1.70117,1 -1.18648,0.57749 -2.82699,1.21115 -4.66993,1.76367 -3.68586,1.10505 -8.22488,1.87938 -11.87695,1.74609 -3.65206,-0.13328 -5.87941,-1.15777 -6.61523,-2.37304 -0.73582,-1.21527 -1.07936,-4.22725 2.23633,-10.51563 1.97535,-3.74636 3.00155,-6.87539 2.70507,-9.960934 -0.29647,-3.085549 -2.55028,-5.782527 -5.11132,-6.875 -5.12209,-2.184948 -11.15022,-1.007495 -17.64649,0.576172 -3.06663,0.747585 -6.19864,1.698697 -9.21094,2.691406 0.12587,-0.164208 0.26618,-0.280474 0.39063,-0.447266 3.26041,-4.369626 6.08634,-9.714643 6.91797,-15.884766 0.65786,-4.880881 -0.10284,-10.239031 -2.6543,-15.654296 3.19982,-0.838666 7.70947,-1.744496 13.98438,-1.751954 z",
+	tolerance:"m 519.3125,55.09375 c -12.0577,-0.01248 -20.82031,3.269531 -20.82031,3.269531 a 3.6803681,3.6803681 0 0 0 -1.76758,5.46875 c 3.65985,5.545222 4.45684,10.390395 3.84766,14.910157 -0.60919,4.519761 -2.77078,8.780278 -5.52149,12.466796 -5.50142,7.373036 -13.04687,12.080076 -13.04687,12.080076 a 3.6803681,3.6803681 0 0 0 3.44531,6.48828 c 0,0 14.1449,-6.354 26.06445,-9.25976 5.95978,-1.452882 11.48944,-1.607229 13.01367,-0.957033 0.76212,0.325098 0.6043,0.08686 0.67383,0.810543 0.0695,0.72369 -0.26975,2.75385 -1.88867,5.82422 -3.87287,7.3451 -4.71148,13.31829 -2.02344,17.75781 2.68804,4.43953 7.80471,5.73946 12.64258,5.91602 4.83787,0.17656 9.93597,-0.75253 14.25977,-2.04883 2.16189,-0.64815 4.119,-1.39011 5.77734,-2.19726 1.65834,-0.80716 2.99488,-1.47993 4.22656,-3.01953 0.53363,-0.66703 2.89091,-2.87846 5.35547,-5.67383 2.46456,-2.79538 5.18836,-6.40115 6.9668,-10.88281 C 574.07446,97.083545 572.9875,84.676958 559.9082,71.597656 546.72481,58.414269 531.3702,55.106229 519.3125,55.09375 Z m -0.11523,7.226562 c 10.4995,-0.01248 23.9011,2.875721 35.50585,14.480469 11.70884,11.708834 11.61282,19.878053 8.97266,26.531249 -1.32008,3.3266 -3.4923,6.28935 -5.64453,8.73047 -2.15223,2.44112 -4.1326,4.13157 -5.58203,5.94336 0.24016,-0.3002 -0.51469,0.42251 -1.70117,1 -1.18648,0.57749 -2.82699,1.21115 -4.66993,1.76367 -3.68586,1.10505 -8.22488,1.87938 -11.87695,1.74609 -3.65206,-0.13328 -5.87941,-1.15777 -6.61523,-2.37304 -0.73582,-1.21527 -1.07936,-4.22725 2.23633,-10.51563 1.97535,-3.74636 3.00155,-6.87539 2.70507,-9.960934 -0.29647,-3.085549 -2.55028,-5.782527 -5.11132,-6.875 -5.12209,-2.184948 -11.15022,-1.007495 -17.64649,0.576172 -3.06663,0.747585 -6.19864,1.698697 -9.21094,2.691406 0.12587,-0.164208 0.26618,-0.280474 0.39063,-0.447266 3.26041,-4.369626 6.08634,-9.714643 6.91797,-15.884766 0.65786,-4.880881 -0.10284,-10.239031 -2.6543,-15.654296 3.19982,-0.838666 7.70947,-1.744496 13.98438,-1.751954 z"
+};
+var shapes = [rightTriangle, pacMan,rightTriangle, pacMan,rightTriangle, pacMan]
+
+//include a background so that hittest is never null
+var background = new Shape.Rectangle(project.view.bounds.topLeft, project.view.bounds.bottomRight);
+background.fillColor = 'white';
 			
 //global variables
 var state = 'draw';
 var score = 0;
+var passingScore = 70;
 var same;
 var diff;
 var currentLevel = 0;
 var maxLevel = 0;
-var minScore = 50;
+var outcome = 'fail';
+
+var hitOptions = {
+    segments: true,
+    stroke: true,
+    fill: true,
+
+    tolerance: 5
+};
+
+
 
 var drawingLayer = new Layer();
 
 var shapeLayer = new Layer();
 
 drawingLayer.activate();
-
-
-
-
-
-
 	
+var shape;
+var shapeCompare;
+var tolerance; 
+var compareGroup;
+
+drawShape();
+
+function drawShape () {
 	
 	//Shape
-	var shape = new Path(shapes[currentLevel].shape); //load the shape that corresponds with the level
+	shape = new Path(shapes[currentLevel].shape); //load the shape that corresponds with the level
 	shape.strokeColor = 'black';
 	//shape.scale(1.5);
 
@@ -49,30 +72,28 @@ drawingLayer.activate();
 	//add shape to shape layer
 	shapeLayer.addChild(shape);
 
+	
+}
+
+function drawCompareShape() {
+
 	//Comparison shape
-	var shapeCompare = shape.clone();
+	shapeCompare = shape.clone();
 	shapeCompare.bounds.center = new Point(165,335);
 
 	//Shape for the acceptable area
-
-	var tolerance = new CompoundPath(shapes[currentLevel].tolerance);
+	tolerance = new CompoundPath(shapes[currentLevel].tolerance);
 	tolerance.fillColor = 'black';
 	tolerance.fillColor.alpha = 0.1 ;
 	tolerance.bounds.center = shapeCompare.bounds.center;
-	//tolerance.scale(1.5);
-
-	var xOffset = shapes[currentLevel].xOffset;
-
-	tolerance.position.x = tolerance.position.x + xOffset;
-
-	var yOffset = shapes[currentLevel].yOffset;
-
-	tolerance.position.y = tolerance.position.y + yOffset;
+	tolerance.position.x = tolerance.position.x + shapes[currentLevel].xOffset;
+	tolerance.position.y = tolerance.position.y + shapes[currentLevel].yOffset;
 
 	//group and hide comparison shapes
-	var compareGroup = new Group(tolerance, shapeCompare)
-	compareGroup.visible = false;
+	compareGroup = new Group(tolerance, shapeCompare)
+	
 
+};
 	
 //Crosshairs
 
@@ -112,6 +133,22 @@ function onMouseDown(event) {
 		crosshair.visible = true;
 		
 	}
+
+	if (state == 'done') {
+		var hitResult = project.hitTest(event.point, hitOptions);
+
+
+
+		if (hitResult.item == prevButton) {
+			currentLevel = currentLevel -= 1
+		}
+
+		else if (hitResult.item == nextButton){
+			currentLevel = currentLevel += 1;
+		};
+
+		
+	}
 	
 	
 }
@@ -145,16 +182,21 @@ function onMouseUp(event) {
 	if (state == 'done') {
 		//remove the path
 		path.remove();
-		//hide comparison shapes
-		compareGroup.visible = false;
+
 		//close the done screen
 		doneScreenLayer.visible = false;
 		
 		different.remove();
 		same.remove();
+
+		shape.remove();
+		compareGroup.remove();
+
+		drawShape();
 		
 		//change the state 
 		state = 'draw';
+
 		
 	}
 	
@@ -168,9 +210,8 @@ function onMouseUp(event) {
 		path.smooth();
 		drawingLayer.addChild(path); //add path to drawing layer
 		
-		//show comparison shapes
-		compareGroup.visible = true;
-		
+		drawCompareShape();
+
 		//compare
 		compare();
 		
@@ -183,7 +224,6 @@ function onMouseUp(event) {
 	}
 
 }
-
 	
 //done screen 
 var doneScreenLayer = new Layer();
@@ -200,28 +240,34 @@ scoreText.position.y = scoreText.position.y - 10;
 var tryAgainButton = new Shape.Circle({
     center: (view.bounds.bottomCenter) - new Point(0,25),
     radius: 10,
-    strokeColor: new Color(0.25, 0.25, 0.25)
+    strokeColor: new Color(0.25, 0.25, 0.25),
+    fillColor: new Color(0.25, 0.25, 0.25)
 });
+tryAgainButton.visible = false;
 
 //next button
 var nextButton = new Path.RegularPolygon({
     center: (view.bounds.bottomCenter) + new Point(100,-22),
     sides: 3,
     radius: 10,
-    strokeColor: new Color(0.25, 0.25, 0.25)
+    strokeColor: new Color(0.25, 0.25, 0.25),
+    fillColor: new Color(0.25, 0.25, 0.25)
 });
 nextButton.rotate(90);
+nextButton.visible = false;
 
 //previous button
 var prevButton = new Path.RegularPolygon({
     center: (view.bounds.bottomCenter) - new Point(100,22),
     sides: 3,
     radius: 10,
-    strokeColor: new Color(0.25, 0.25, 0.25)
+    strokeColor: new Color(0.25, 0.25, 0.25),
+    fillColor: new Color(0.25, 0.25, 0.25)
 });
 prevButton.rotate(-90);
+prevButton.visible = false;
 
-//ouctcome text 
+//outcome text 
 
 var outcomeText = new PointText(view.center);
 outcomeText.justification = 'center';
@@ -234,15 +280,43 @@ outcomeText.position.y = outcomeText.position.y + 10;
 doneScreenLayer.visible = (false);
 
 drawingLayer.activate();
+
+/*
+	To do
+
+		make the buttons clickable
+
+		set the default action based on the outcome fail = try again and pass = next
+
+		make a bigger hit area for the buttons
+
+		show the back and next buttons at the begining if there is an earlier and later level. Hid the buttons once the they start drawing.
+*/
 	
 function doneScreen () {
 		
 	doneScreenLayer.visible = (true);
 	
 	state = 'done';
+
+	if (outcome == 'pass') {
+		outcomeText.content='Pretty good :-|'
+		nextButton.visible = true;
+		tryAgainButton.visible = true;
+
+	}
+	else {
+		outcomeText.content='Try Again :-('
+		nextButton.visible = false;
+		tryAgainButton.visible = true;
+	};
+
+	if (currentLevel >= 1) {
+		prevButton.visible = true;
+
+	}
 	
-	
-}
+};
 	
 	
 //Scale
@@ -283,8 +357,10 @@ function compare () {
 	scalePath();
 	
 	//create a shape where the drawing overlaps the tolerance
+	
 	same = path.intersect(tolerance);
 	same.fillColor = 'green';
+
 
 	//create a shape where the drawing doesn't overlap the tolerance
 	different = path.subtract(tolerance);
@@ -296,5 +372,12 @@ function compare () {
 	var rawScore = (sameArea / totalArea) * 100;
 	score = Math.abs(Math.floor(rawScore));
 	scoreText.content = score + '%';
+
+	//determine the outcome
+
+	if (score >= passingScore) {
+		outcome = 'pass'
+	}
+	else {outcome = 'fail'};
 	
 }
