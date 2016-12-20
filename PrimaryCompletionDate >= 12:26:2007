@@ -1,0 +1,64 @@
+PrimaryCompletionDate >= 12/26/2007
+and     StudyType = Interventional
+and 
+(
+    Phase Contains Phase 2
+    or     Phase Contains Phase 3
+    or     Phase Contains Phase 2/Phase 3
+    or     Phase Contains Phase 4
+)
+and 
+(
+    Interventions Contains Drug
+    or     Interventions Contains Device
+    or     Interventions Contains Biological
+    or     Interventions Contains Genetic
+    or     Interventions Contains Radiation
+)
+and 
+(
+
+(
+    Locations Contains United States
+    or     Locations Contains USA
+)
+    or     IND_IDE Contains IND
+    or     IND_IDE = IND
+)
+
+
+
+Applicability
+PrimaryCompletionDate >= 12/26/2007
+and     StudyType = Interventional
+and 
+(
+    Phase Contains Phase 1
+    or     Phase Contains Phase 2 
+    or     Phase Contains Phase 3
+    or     Phase Contains Phase 2/Phase 3
+    or     Phase Contains Phase 4
+)
+and 
+(
+    Interventions Contains Drug
+    or     Interventions Contains Device
+    or     Interventions Contains Biological
+    or     Interventions Contains Genetic
+    or     Interventions Contains Radiation
+)
+and 
+(
+
+(
+    Locations Contains United States
+    or     Locations Contains USA
+)
+    or     IND_IDE Contains IND
+    or     IND_IDE = IND
+)
+
+
+Due date
+EnrollmentStartDate
+

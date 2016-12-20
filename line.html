@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Line as shape</title>
+
+	<script type="text/javascript" src="paper-full.js"></script>
+	<script type="text/paperscript" canvas="canvas">
+	
+tool.minDistance = 5;
+tool.maxDistance = 50;
+
+var path;
+
+function onMouseDown(event) {
+	path = new Path();
+	//path.fillColor = 'black';
+	path.strokeColor = 'black';
+	path.strokeWidth = 6;
+
+	path.add(event.point);
+}
+
+function onMouseDrag(event) {
+	var step = event.delta / 2;
+	step.angle += 90;
+	step.length = 1;
+	
+	var top = event.middlePoint + step;
+	var bottom = event.middlePoint - step;
+	
+	//path.add(top);
+	//path.insert(0, bottom);
+
+	path.add(event.point);
+
+	path.smooth();
+}
+
+function onMouseUp(event) {
+	path.add(event.point);
+	//path.closed = true;
+	path.smooth();
+	console.log(path);
+}
+
+	</script>
+</head>
+<body>
+	<canvas id="canvas" resize stats hidpi="off"></canvas>
+</body>
+</html>
