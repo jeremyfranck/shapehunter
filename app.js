@@ -125,7 +125,8 @@ function onMouseDown(event) {
 		
 		//start drawing
 		path = new Path();
-		path.fillColor = 'black';
+		path.strokeColor = 'black';
+		path.strokeWidth = 6;
 		path.add(event.point);
 		
 		//show the crosshairs
@@ -157,17 +158,7 @@ function onMouseDrag(event) {
 	
 	if (state == 'draw') {
 
-		//get the distance and angle	
-		var step = event.delta / 2;
-		step.angle += 90;
-		step.length = 1; //fixed width
-		
-		var top = event.middlePoint + step;
-		var bottom = event.middlePoint - step;
-		
-		//add segments based on the width of the line
-		path.add(top);
-		path.insert(0, bottom);
+		path.add(event.point);
 		path.smooth();
 		
 		//move the crosshairs	
@@ -206,8 +197,8 @@ function onMouseUp(event) {
 		
 		//close and smooth the path
 		path.add(event.point);
-		path.closed = true;
 		path.smooth();
+
 		drawingLayer.addChild(path); //add path to drawing layer
 		
 		drawCompareShape();
