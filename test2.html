@@ -48,7 +48,7 @@ tolerance.scale(.75);
 
 
 
-
+var score = 'hello';
 
 var drawing = new Path();
     drawing.strokeColor = 'black';
@@ -152,17 +152,12 @@ function compare(path,tolerance) {
 		}
 
 	 //end for loop
+
+
+
 	};
 
 //end compare function
-
-for (var i = 0; i <= (intersections.length); i ++) {
-	
-console.log(i);
-
-}
-
-
 
 };	
 
@@ -186,8 +181,43 @@ function inOrOut(segment, tolerance, same, diff) {
 		diff.addChild(segment.clone())
 	
 	}
+
+
+var diffLength = 0;
+var sameLength = 0;
+
+for (var i = 0; i < (diff.children.length); i ++) {
 	
+diffLength = diffLength + diff.children[i].length
+
 }
+
+for (var i = 0; i < (same.children.length); i ++) {
+	
+sameLength = sameLength + same.children[i].length
+
+}
+
+
+	//get the % the length that is overlaping
+	
+	var totalLength = diffLength + sameLength;
+	
+	var rawScore = (sameLength / totalLength) * 100;
+	score = Math.abs(Math.floor(rawScore));
+	scoreText.content = score + '%';
+
+	
+};
+
+
+
+
+var scoreText = new PointText(view.center);
+scoreText.justification = 'center';
+scoreText.fillColor = 'red';
+scoreText.content = score;
+scoreText.position.y = scoreText.position.y - 10;
 
 
 	</script>
