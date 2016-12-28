@@ -1,5 +1,7 @@
-//Shapes
 
+
+
+//Shapes
 var rightTriangle = 
 	{		
 		shape:"m 378.38864,189.83275 -0.40259,49.11507 132.85224,0 z",
@@ -31,6 +33,7 @@ var freeShape =
 		xOffset: -0,
 		yOffset: -0, 
 	};
+
 
 
 var shapes = [freeShape, pacMan,rightTriangle, pacMan,rightTriangle, pacMan]
@@ -73,8 +76,8 @@ var tolerance;
 var compareGroup;
 
 
-
-
+var windowSize = new PointText(view.center.x,view.center.y-30);
+windowSize.content = window.innerWidth + " x " + window.innerHeight;
 
 drawShape();
 
@@ -85,7 +88,7 @@ function drawShape () {
 	shape.strokeColor = 'black';
 	//shape.scale(1.5);
 
-	shape.bounds.center = new Point(165,105);
+	shape.bounds.center = new Point(view.bounds.center.x,view.bounds.center.y-(.5 * view.bounds.center.y));
 
 	//add shape to shape layer
 	shapeLayer.addChild(shape);
@@ -97,7 +100,7 @@ function drawCompareShape() {
 
 	//Comparison shape
 	shapeCompare = shape.clone();
-	shapeCompare.bounds.center = new Point(165,335);
+	shapeCompare.bounds.center = new Point(view.bounds.center.x,view.bounds.center.y+(.5 * view.bounds.center.y));
 
 	//Shape for the acceptable area
 	tolerance = new CompoundPath(shapes[currentLevel].tolerance);

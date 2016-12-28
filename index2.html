@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+		<meta charset="utf-8">
+		<title>Draw shape from line</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		
+		<link rel="stylesheet" href="style.css">
+		
+<style type="text/css">
+
+html,
+body {
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* Scale canvas with resize attribute to full size */
+canvas[resize] {
+    width: 100%;
+    height: 100%;
+}
+</style>
+
+		
+	
+	
+	</head>
+
+	<body>
+		<canvas id="workspace"></canvas>
+
+
+
+	</body>
+<script type="text/javascript">
+	$(resizeCanvas());
+
+function resizeCanvas() {
+ 
+  var can = document.getElementById("workspace");
+  can.style.width = window.innerWidth + "px";
+  can.style.height = window.innerHeight + "px";
+ 	console.log(document.getElementById("workspace").height);
+
+
+};
+</script>
+	<script type="text/javascript" src="paper-full.js"></script>
+<script type="text/paperscript" src="app.js?v=4" canvas="workspace"></script>
+</html>
